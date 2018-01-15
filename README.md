@@ -40,5 +40,5 @@ git config [--global] commit.template .gitmessage
 
 Maybe a GUI editor is friendly
 ```
-git config [--global] core.editor c:\Notepad++\notepad++.exe
+git config [--global] core.editor c:\\Notepad++\\notepad++.exe
 ```
