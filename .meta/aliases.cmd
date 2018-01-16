@@ -1,6 +1,14 @@
 ;;;= Update hot keys
 ;;=
-upkey = doskey /macrofile="%_META%\aliases.cmd"
+.upalias = %_META%\make_alias.bat
+
+;;;= Register scripts under UTOOLS to hot keys
+;;=
+;= Append tools to register file
+.reg = %_META_IMPL%\regtools.bat
+
+;= Re-register all custom tools
+.rereg = %_META_IMPL%\regtools.bat 1
 
 
 ;;;= Save current dir & go back

@@ -13,8 +13,12 @@ if "%UTOOLS:~-1%" == "/" set UTOOLS=%UTOOLS:~0,-1%
 : adding batch tools folder to PATH
 set PATH=%UTOOLS%;%PATH%
 
+: set some variables
 set _META=%UTOOLS%\.meta
 set _META_IMPL=%UTOOLS%\.meta\impl
+set UTOOLS_CONFIG=%UTOOLS%\config
+set TOOLS_ALIASES=tools_aliases
+
 
 : simulate shebang
 assoc .pysh=shebang
@@ -26,8 +30,8 @@ set _TEMPDIR=%UTOOLS%\temp
 if not exist "%_TEMPDIR%" mkdir "%_TEMPDIR%"
 attrib +h +s "%_TEMPDIR%" /D /S
 
-rem Here is alias defined by Cmder: %CMDER_ROOT%\config\user-aliases.cmd
-doskey /macrofile="%_META%\aliases.cmd"
+rem Here is alias already defined by Cmder: %CMDER_ROOT%\config\user-aliases.cmd
+call "%_META%\make_alias.bat"
 
 rem should be clear when all succeed, keep error msg vise verse.
 cls
