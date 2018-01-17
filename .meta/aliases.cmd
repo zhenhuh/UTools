@@ -13,8 +13,9 @@
 
 ;;;= Save current dir & go back
 ;;=
-push = %_META_IMPL%\pushdir.bat
-pop  = %_META_IMPL%\popdir.bat
+push   = %_META_IMPL%\pushdir.bat
+pushed = %_META_IMPL%\pushdir.bat 0
+pop    = %_META_IMPL%\popdir.bat
 
 
 ;;;= Abbreviation for command
@@ -25,7 +26,8 @@ t  = type $*
 
 ;;;= Quick folder ops
 ;;=
-.   = start .
+;= Use * include all parts divided by space
+.   = %_META_IMPL%\opendir.bat $*
 ..  = cd ..
 ... = cd ../..
 \   = cd \
