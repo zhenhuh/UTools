@@ -5,7 +5,7 @@
 ;;;= Register scripts under UTOOLS to hot keys
 ;;=
 ;= Append tools to register file
-.reg = %_META_IMPL%\regtools.bat
+.reg = %_META_IMPL%\regtools.bat $1
 
 ;= Re-register all custom tools
 .rereg = %_META_IMPL%\regtools.bat 1
