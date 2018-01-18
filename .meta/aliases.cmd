@@ -24,6 +24,11 @@ c  = cls
 t  = type $*
 
 
+;;;= Develop tools
+;;=
+devenv  = %_META_IMPL%\devenv.bat
+
+
 ;;;= Quick folder ops
 ;;=
 ;= Use * include all parts divided by space
