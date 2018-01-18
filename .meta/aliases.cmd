@@ -13,8 +13,8 @@
 
 ;;;= Save current dir & go back
 ;;=
-push   = pushd . & set _currdir=%CD% & echo pushed "%CD%"
-pushed = echo "%_currdir%"
+push   = pushd . & set _currdir=%CD%& echo pushed "%CD%"
+pushed = if not exist "%_currdir%\" (echo Nothing pushed) else (echo "%_currdir%")
 pop    = popd
 
 
