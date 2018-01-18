@@ -13,9 +13,9 @@
 
 ;;;= Save current dir & go back
 ;;=
-push   = %_META_IMPL%\pushdir.bat
-pushed = %_META_IMPL%\pushdir.bat 0
-pop    = %_META_IMPL%\popdir.bat
+push   = pushd . & set _currdir=%CD% & echo pushed "%CD%"
+pushed = echo "%_currdir%"
+pop    = popd
 
 
 ;;;= Abbreviation for command
