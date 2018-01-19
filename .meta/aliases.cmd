@@ -26,7 +26,7 @@ t  = type $*
 
 ;;;= Develop tools
 ;;=
-devenv  = %_META_IMPL%\devenv.bat
+devenv  = %_META_IMPL%\devenv.bat $1
 
 
 ;;;= Quick folder ops
