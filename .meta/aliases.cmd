@@ -36,7 +36,7 @@ devenv  = %_META_IMPL%\devenv.bat $1
 ..  = cd ..
 ... = cd ../..
 \   = cd \
-cd  = cd /d "$*"
+cd  = %_META_IMPL%\chdir.bat $*
 
 
 ;;;= Misc.
