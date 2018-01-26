@@ -9,7 +9,7 @@ set _command=%_cmd_res%
 
 rem get all parts of params(input path, maybe space in it)
 set _currdir=%_params_res%
-if "%_currdir%" == "" set _currdir=.
+if "%_currdir%" == "" set _currdir="This_is_tricky_and_it_should_be_._here_but_this_dummy_string_will_let_echo_print_working_dir_rather_than_._in_fn_doCommand"
 
 rem remove quotes between the path if it has
 set _currdir=%_currdir:"=%

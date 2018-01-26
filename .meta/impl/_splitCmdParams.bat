@@ -17,7 +17,11 @@ call :fn_split %_paramPos% %_tail%
 
 endlocal & (
   set _cmd_res=%_command:"=%
-  set _params_res=%_paramList:"=%
+  if not "%_paramList%" == "" (
+    set _params_res=%_paramList:"=%
+  ) else (
+    set _params_res=%_paramList%
+  )
   set _command=
   set _paramList=
 )
