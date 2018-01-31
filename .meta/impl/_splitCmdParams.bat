@@ -45,7 +45,7 @@ setlocal EnableDelayedExpansion
 
 endlocal & (
   set _command=%_command%
-  set _paramList=%_params%
+  set "_paramList=%_params:)=^)%"
 )
 goto :EOF
 
