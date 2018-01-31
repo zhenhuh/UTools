@@ -22,6 +22,7 @@ pop    = popd
 ;;=
 c  = cls
 t  = type $*
+q  = exit
 
 
 ;;;= Develop tools
