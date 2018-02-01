@@ -18,9 +18,9 @@ call :fn_split %_paramPos% %_tail%
 endlocal & (
   set _cmd_res=%_command:"=%
   if not "%_paramList%" == "" (
-    set _params_res=%_paramList:"=%
+    set "_params_res=%_paramList:"=%"
   ) else (
-    set _params_res=%_paramList%
+    set "_params_res=%_paramList%"
   )
   set _command=
   set _paramList=
@@ -45,7 +45,11 @@ setlocal EnableDelayedExpansion
 
 endlocal & (
   set _command=%_command%
-  set "_paramList=%_params:)=^)%"
+  if not "%_params%" == "" (
+    set "_paramList=%_params:)=^)%"
+  ) else (
+    set "_paramList=%_params%"
+  )
 )
 goto :EOF
 
