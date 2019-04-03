@@ -41,7 +41,7 @@ setlocal EnableDelayedExpansion
   )
 
   rem params part
-  for /f "tokens=%~1,* delims= " %%a in ("%*") do set _params=%%b
+  for /f "tokens=%~1,* delims= " %%a in ("%*") do set _params=%%~b
 
 endlocal & (
   set _command=%_command%
