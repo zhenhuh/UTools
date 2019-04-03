@@ -26,15 +26,24 @@ for /f "tokens=1,2,*" %%i in ('reg query %_vs_registry_path% /reg:32') do (
   )
 )
 
-set _vsVarsArg=x86
-set _amd64flag=
-if /i "%PROCESSOR_ARCHITEW6432%" == "amd64" set _amd64flag=1
-if /i "%PROCESSOR_ARCHITECTURE%" == "amd64" set _amd64flag=1
-if defined _amd64flag (
-  set _vsVarsArg=AMD64
-)
-
-call "%_vs_path%VC\Auxiliary\Build\vcvarsall.bat" %_vsVarsArg% > nul
+rem vcvarsall.bat useless in devenv UI, so comment below code for now
+rem set _vsVarsArg=x86
+rem set _amd64flag=
+rem if /i "%PROCESSOR_ARCHITEW6432%" == "amd64" set _amd64flag=1
+rem if /i "%PROCESSOR_ARCHITECTURE%" == "amd64" set _amd64flag=1
+rem if defined _amd64flag (
+rem   set _vsVarsArg=AMD64
+rem )
+rem
+rem call "%_vs_path%VC\Auxiliary\Build\vcvarsall.bat" %_vsVarsArg% > nul
+rem if errorlevel 1 (
+rem   rem vs version is less then 2017
+rem   echo Not found vcvarsall.bat. Maybe visual studio version is less then 2017. Trying again.
+rem   call "%_vs_path%VC\vcvarsall.bat" %_vsVarsArg% > nul
+rem   if errorlevel 1 (
+rem     echo visual studio is too old :D
+rem   )
+rem )
 
 rem support input is sln or proj when only one *.sln or one *.(vcx|cs)proj in current folder
 set _count=0
